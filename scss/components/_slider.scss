@@ -1,21 +1,14 @@
 .slider-wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center; /* delete after putting other items */
-  transition: all 200ms;
-  padding: 0.5rem 1.06rem;
-  overflow-x: hidden; /* comment it out to see slides in mobile*/
-  @media (min-width: 36em) {
+  overflow-x: hidden;
+  position: relative;
+  @include breakpoint-up(sm) {
     padding: 1.5rem;
+    display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: #4158d0;
-    /*background-image: linear-gradient(
-        43deg,
-        #4158d0 0%,
-        #c850c0 46%,
-        #ffcc70 100%
-      );*/
+    min-height: 100vh; /* temporary purpose delete it before using */
     background-image: linear-gradient(
       to left top,
       rgb(137, 128, 117),
@@ -23,35 +16,69 @@
       rgb(137, 128, 117)
     );
   }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+  .mobile-counter {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1.8rem 2.5rem;
+    background-color: rgba(51, 50, 50, 0.5);
+    padding: 0.3rem 0.5rem;
+    border-radius: 20px;
+    z-index: $counterZ;
+    span {
+      color: #fff;
+      font-size: 0.7rem;
+      margin: 0 0.18rem;
+      font-weight: 500;
+    }
+    span:nth-child(2) {
+      margin: 0 0.05rem;
+    }
+    @include breakpoint-up(sm) {
+      display: none;
+    }
   }
-
+  .slider-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 200ms;
+    @include breakpoint-down(xs) {
+      padding: 0.5rem 1.06rem;
+      transform: translateX(0);
+      will-change: transform;
+      cursor: grab;
+      transition: transform 0.3s ease-out;
+    }
+    @include breakpoint-up(sm) {
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  .grabbing {
+    cursor: grabbing;
+  }
   .blink {
     opacity: 1;
     visibility: visible;
   }
-  .slider-center {
+  .slide-content {
     max-width: 71.875em; /* 1150px */
     height: 24.125em; /* 386 px */
-    width: 95%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 6px 26px rgba(0, 0, 0, 0.16);
-    @media (max-width: 35.9375em) {
+    @include breakpoint-down(xs) {
       position: relative;
       min-width: 100%;
       flex-direction: column-reverse;
       border-radius: 0;
       box-shadow: 0 6px 26px -10px rgba(0, 0, 0, 0.16);
       padding: 5px;
-      transition: transform 500ms ease-in-out;
+      transition: transform 0.3s ease-out;
     }
   }
   .slider-body {
@@ -62,7 +89,7 @@
     padding: 2.5rem;
     min-width: 265px;
     flex: 1;
-    @media (max-width: 35.9375em) {
+    @include breakpoint-down(xs) {
       position: absolute;
       bottom: 5px;
       left: 5px;
@@ -77,14 +104,14 @@
       justify-content: space-around;
     }
     .body-info {
-      @media (max-width: 35.9375em) {
+      @include breakpoint-down(xs) {
         margin-right: 0.5rem;
       }
     }
     .slider-subheading {
       font-weight: 300;
       font-size: 0.9rem;
-      @media (min-width: 36em) {
+      @include breakpoint-up(sm) {
         color: rgb(88, 87, 87);
       }
     }
@@ -92,7 +119,7 @@
       font-size: 1.5em;
       color: rgb(61, 59, 59);
       margin: 1rem 0;
-      @media (max-width: 35.9375em) {
+      @include breakpoint-down(xs) {
         color: #fff;
         font-size: 0.9rem;
         margin: 0.3rem 0 0;
@@ -107,11 +134,12 @@
       padding: 0.7em 2.1em;
       border-radius: 100vh;
       box-shadow: 0 3px 12px -8px #000;
-      transition: transform 0.3s ease-out;
+      transition: transform 0.3s ease-out, background-color 0.3s ease-out;
       &:hover {
         transform: translateY(-2.5px);
+        background-color: lighten($dc-color, 10);
       }
-      @media (max-width: 35.9375em) {
+      @include breakpoint-down(xs) {
         font-size: 0.7rem;
       }
     }
@@ -122,8 +150,13 @@
     width: 100%;
     height: 100%;
     padding: 4px;
-    @media (max-width: 35.9375em) {
+    @include breakpoint-down(xs) {
       padding: 0;
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
     }
     .slide-item-container {
       width: 100%;
@@ -132,11 +165,17 @@
         height: 100%;
       }
     }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
   }
 
   .mini-slider-wrapper {
     margin-top: 1.5rem;
-    @media (max-width: 35.9375em) {
+    @include breakpoint-down(xs) {
       display: none;
     }
     .mini-list-container {
@@ -159,7 +198,7 @@
     }
   }
   .slider-demo-purpose2 {
-    @media (min-width: 36em) {
+    @include breakpoint-up(sm) {
       display: none;
     }
   }

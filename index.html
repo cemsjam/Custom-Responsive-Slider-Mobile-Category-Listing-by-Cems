@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="icon" href="./assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -90,70 +91,81 @@
     <!-- category-listing-end -->
     <!-- slider-wrapper -->
     <div class="slider-wrapper">
+      <div class="mobile-counter">
+        <span class="currentSlideNum">1</span>
+        <span>/</span>
+        <span class="totalSlideNum">2</span>
+      </div>
       <!-- center -->
-      <div class="slider-center">
-        <!-- body -->
-        <div class="slider-body">
-          <div class="body-info">
-            <p class="slider-subheading">Some type of subheading</p>
-            <h2 class="slider-heading">Some type of eyecatching heading</h2>
+      <div class="slider-container">
+        <div class="slide-content">
+          <!-- body -->
+          <div class="slider-body">
+            <div class="body-info">
+              <p class="slider-subheading">Some type of subheading</p>
+              <h2 class="slider-heading">Some type of eyecatching heading</h2>
+            </div>
+            <button class="btn slider-btn">Click Me</button>
           </div>
-          <button class="btn slider-btn">Click Me</button>
-        </div>
-        <!-- img side -->
-        <div class="slider-main-img">
-          <a class="main-img-link" href="#">
-            <div class="slide-item-container" id="slide-container">
-              <div class="slide-item">
-                <img
-                  src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                  alt=""
-                />
+          <!-- img side -->
+          <div class="slider-main-img">
+            <a class="main-img-link" href="#">
+              <div class="slide-item-container" id="slide-container">
+                <div class="slide-item">
+                  <img
+                    src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                    alt=""
+                  />
+                </div>
               </div>
+            </a>
+          </div>
+        </div>
+        <!-- for trying purpose -->
+        <div class="slide-content slider-demo-purpose2">
+          <!-- body -->
+          <div class="slider-body">
+            <div class="body-info">
+              <p class="slider-subheading">Some type of subheading</p>
+              <h2 class="slider-heading">Some type of eyecatching heading</h2>
             </div>
-          </a>
-        </div>
-      </div>
-      <!-- for trying purpose -->
-      <div class="slider-center slider-demo-purpose2">
-        <!-- body -->
-        <div class="slider-body">
-          <p class="slider-subheading">Some type of subheading</p>
-          <h2 class="slider-heading">Some type of eyecatching heading</h2>
-          <button class="btn slider-btn">Click Me</button>
-        </div>
-        <!-- img side -->
-        <div class="slider-main-img">
-          <a class="main-img-link" href="#">
-            <div class="slide-item-container" id="slide-container">
-              <div class="slide-item">
-                <img
-                  src="https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  alt=""
-                />
+            <button class="btn slider-btn">Click Me</button>
+          </div>
+          <!-- img side -->
+          <div class="slider-main-img">
+            <a class="main-img-link" href="#">
+              <div class="slide-item-container" id="slide-container">
+                <div class="slide-item">
+                  <img
+                    src="https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    alt=""
+                  />
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
-      </div>
-      <!-- for trying purpose -->
+        <!-- for trying purpose -->
 
-      <div class="slider-center slider-demo-purpose2">
-        <!-- body -->
-        <div class="slider-body">
-          <p class="slider-subheading">Some type of subheading</p>
-          <h2 class="slider-heading">Some type of eyecatching heading</h2>
-          <button class="btn slider-btn">Click Me</button>
-        </div>
-        <!-- img side -->
-        <div class="slider-main-img">
-          <a class="main-img-link" href="#">
-            <div class="slide-item-container" id="slide-container">
-              <div class="slide-item">
-                <img src="https://source.unsplash.com/random" alt="" />
-              </div>
+        <div class="slide-content slider-demo-purpose2">
+          <!-- body -->
+          <div class="slider-body">
+            <div class="body-info">
+              <p class="slider-subheading">Some type of subheading</p>
+              <h2 class="slider-heading">Some type of eyecatching heading</h2>
             </div>
-          </a>
+            <button class="btn slider-btn">Click Me</button>
+          </div>
+          <!-- img side -->
+          <div class="slider-main-img">
+            <a class="main-img-link" href="#">
+              <div class="slide-item-container" id="slide-container">
+                <div class="slide-item">
+                  <img src="https://source.unsplash.com/random" alt="" />
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <!-- mini slider -->
@@ -198,5 +210,137 @@
       </div>
     </div>
     <!-- slider-wrapper end -->
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav">
+      <ul class="bottom-nav__items">
+        <li class="bottom-nav__item">
+          <a href="#" class="bottom-nav__link">
+            <span class="bottom-nav__icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  fill="#FF6000"
+                  d="M23 23V10.325L12.5 2 2 10.325V23z"
+                ></path>
+                <path fill="#FF9E64" d="M16.448 5.13L12.5 2 2 10.325z"></path>
+                <path
+                  fill="#C44A00"
+                  d="M2 25c-1.107 0-2-.903-2-2.012V10.326c0-.616.281-1.198.763-1.58l10.5-8.315a1.99 1.99 0 012.474 0l10.5 8.315c.482.382.763.964.763 1.58v12.662A2.006 2.006 0 0123 25H2zM12.5 2.003L2.005 10.315c-.003.001-.005.006-.005.012V23l6-.001V17a2 2 0 012-2h5a2 2 0 012 2v5.999L23 23c-.003 0 0-.003 0-.012v-12.66c0-.007-.002-.012-.005-.014L12.5 2.003zM15 17h-5v6h5v-6z"
+                ></path>
+                <path fill="#FF9E64" d="M15 23v-6h-5v6z"></path>
+                <path fill="#FFD1B5" d="M10 19.143L15 17h-5z"></path></svg
+            ></span>
+            <span class="bottom-nav__name">Keşfet</span>
+          </a>
+        </li>
+        <li class="bottom-nav__item">
+          <a href="#" class="bottom-nav__link">
+            <span class="bottom-nav__icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  fill="#FF6000"
+                  d="M23 23V10.325L12.5 2 2 10.325V23z"
+                ></path>
+                <path fill="#FF9E64" d="M16.448 5.13L12.5 2 2 10.325z"></path>
+                <path
+                  fill="#C44A00"
+                  d="M2 25c-1.107 0-2-.903-2-2.012V10.326c0-.616.281-1.198.763-1.58l10.5-8.315a1.99 1.99 0 012.474 0l10.5 8.315c.482.382.763.964.763 1.58v12.662A2.006 2.006 0 0123 25H2zM12.5 2.003L2.005 10.315c-.003.001-.005.006-.005.012V23l6-.001V17a2 2 0 012-2h5a2 2 0 012 2v5.999L23 23c-.003 0 0-.003 0-.012v-12.66c0-.007-.002-.012-.005-.014L12.5 2.003zM15 17h-5v6h5v-6z"
+                ></path>
+                <path fill="#FF9E64" d="M15 23v-6h-5v6z"></path>
+                <path fill="#FFD1B5" d="M10 19.143L15 17h-5z"></path></svg
+            ></span>
+            <span class="bottom-nav__name">Keşfet</span>
+          </a>
+        </li>
+        <li class="bottom-nav__item">
+          <a href="#" class="bottom-nav__link">
+            <span class="bottom-nav__icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  fill="#FF6000"
+                  d="M23 23V10.325L12.5 2 2 10.325V23z"
+                ></path>
+                <path fill="#FF9E64" d="M16.448 5.13L12.5 2 2 10.325z"></path>
+                <path
+                  fill="#C44A00"
+                  d="M2 25c-1.107 0-2-.903-2-2.012V10.326c0-.616.281-1.198.763-1.58l10.5-8.315a1.99 1.99 0 012.474 0l10.5 8.315c.482.382.763.964.763 1.58v12.662A2.006 2.006 0 0123 25H2zM12.5 2.003L2.005 10.315c-.003.001-.005.006-.005.012V23l6-.001V17a2 2 0 012-2h5a2 2 0 012 2v5.999L23 23c-.003 0 0-.003 0-.012v-12.66c0-.007-.002-.012-.005-.014L12.5 2.003zM15 17h-5v6h5v-6z"
+                ></path>
+                <path fill="#FF9E64" d="M15 23v-6h-5v6z"></path>
+                <path fill="#FFD1B5" d="M10 19.143L15 17h-5z"></path></svg
+            ></span>
+            <span class="bottom-nav__name">Keşfet</span>
+          </a>
+        </li>
+        <li class="bottom-nav__item">
+          <a href="#" class="bottom-nav__link">
+            <span class="bottom-nav__icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  fill="#FF6000"
+                  d="M23 23V10.325L12.5 2 2 10.325V23z"
+                ></path>
+                <path fill="#FF9E64" d="M16.448 5.13L12.5 2 2 10.325z"></path>
+                <path
+                  fill="#C44A00"
+                  d="M2 25c-1.107 0-2-.903-2-2.012V10.326c0-.616.281-1.198.763-1.58l10.5-8.315a1.99 1.99 0 012.474 0l10.5 8.315c.482.382.763.964.763 1.58v12.662A2.006 2.006 0 0123 25H2zM12.5 2.003L2.005 10.315c-.003.001-.005.006-.005.012V23l6-.001V17a2 2 0 012-2h5a2 2 0 012 2v5.999L23 23c-.003 0 0-.003 0-.012v-12.66c0-.007-.002-.012-.005-.014L12.5 2.003zM15 17h-5v6h5v-6z"
+                ></path>
+                <path fill="#FF9E64" d="M15 23v-6h-5v6z"></path>
+                <path fill="#FFD1B5" d="M10 19.143L15 17h-5z"></path></svg
+            ></span>
+            <span class="bottom-nav__name">Keşfet</span>
+          </a>
+        </li>
+        <li class="bottom-nav__item">
+          <a href="#" class="bottom-nav__link">
+            <span class="bottom-nav__icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  fill="#FF6000"
+                  d="M23 23V10.325L12.5 2 2 10.325V23z"
+                ></path>
+                <path fill="#FF9E64" d="M16.448 5.13L12.5 2 2 10.325z"></path>
+                <path
+                  fill="#C44A00"
+                  d="M2 25c-1.107 0-2-.903-2-2.012V10.326c0-.616.281-1.198.763-1.58l10.5-8.315a1.99 1.99 0 012.474 0l10.5 8.315c.482.382.763.964.763 1.58v12.662A2.006 2.006 0 0123 25H2zM12.5 2.003L2.005 10.315c-.003.001-.005.006-.005.012V23l6-.001V17a2 2 0 012-2h5a2 2 0 012 2v5.999L23 23c-.003 0 0-.003 0-.012v-12.66c0-.007-.002-.012-.005-.014L12.5 2.003zM15 17h-5v6h5v-6z"
+                ></path>
+                <path fill="#FF9E64" d="M15 23v-6h-5v6z"></path>
+                <path fill="#FFD1B5" d="M10 19.143L15 17h-5z"></path></svg
+            ></span>
+            <span class="bottom-nav__name">Keşfet</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Bottom Nav End -->
+    <script src="/slider.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 .category-wrapper {
-  @media (min-width: 36em) {
+  @include breakpoint-up(sm) {
     display: none;
   }
 }
@@ -47,9 +47,10 @@
     .category-name {
       text-align: center;
       color: #222121;
+      font-size: 0.8rem;
       font-weight: 400;
       margin-top: 0.2rem;
-      /* letter-spacing: 0.3px; */
+      letter-spacing: 0.1px;
     }
   }
 }

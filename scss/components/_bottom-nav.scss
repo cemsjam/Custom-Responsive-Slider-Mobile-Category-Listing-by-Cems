@@ -1,0 +1,33 @@
+.bottom-nav {
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  border-top: 1px solid $bottom-nav-border;
+  @include breakpoint-up(sm) {
+    display: none;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__item {
+    flex: 1;
+    padding: 0.6125rem 0 0.25rem;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+  &__name {
+    margin-top: 0.25rem;
+    font-size: 0.625rem;
+    color: $bottom-nav-text;
+  }
+}
