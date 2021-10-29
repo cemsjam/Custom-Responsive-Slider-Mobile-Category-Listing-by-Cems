@@ -16,6 +16,7 @@
       rgb(137, 128, 117)
     );
   }
+
   .mobile-counter {
     position: absolute;
     right: 0;
@@ -55,9 +56,7 @@
       flex-direction: column;
     }
   }
-  .grabbing {
-    cursor: grabbing;
-  }
+
   .blink {
     opacity: 1;
     visibility: visible;
@@ -71,6 +70,8 @@
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 6px 26px rgba(0, 0, 0, 0.16);
+    animation: fadeIn 0.5s ease-in forwards;
+
     @include breakpoint-down(xs) {
       position: relative;
       min-width: 100%;
@@ -81,6 +82,7 @@
       transition: transform 0.3s ease-out;
     }
   }
+
   .slider-body {
     display: flex;
     align-items: flex-start;
@@ -102,10 +104,12 @@
       background-color: rgba(80, 65, 65, 0.3);
       flex-direction: row;
       justify-content: space-around;
+      align-items: center;
     }
     .body-info {
       @include breakpoint-down(xs) {
         margin-right: 0.5rem;
+        @include truncate;
       }
     }
     .slider-subheading {
@@ -141,6 +145,7 @@
       }
       @include breakpoint-down(xs) {
         font-size: 0.7rem;
+        margin-top: 0;
       }
     }
   }
@@ -192,6 +197,10 @@
           object-fit: cover;
         }
       }
+      .mini-list-item:focus-within {
+        outline: 2px solid black;
+        transform: scale(1.03);
+      }
       .active {
         border: 2px solid #fff;
         transform: scale(1.2);
@@ -204,3 +213,31 @@
     }
   }
 }
+/* @keyframes fadeOut {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1% {
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+ */

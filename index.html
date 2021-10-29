@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.min.css" />
     <link rel="icon" href="./assets/favicon.svg" />
+    <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,69 +20,58 @@
     <div class="category-wrapper">
       <div class="category-container">
         <ul class="category-container__items">
-          <!-- REMINDER add transparent imgs here -->
+          <!-- REMINDER add transparent imgs here if want to be used first style -->
+          <!-- REMINDER add 2 imgs into img-container and add class blur-container for second style -->
           <li class="category-container__item">
             <a class="category-container__item-link" href="#">
-              <div class="img-container">
-                <img
-                  src="https://assets.stickpng.com/images/580b57fbd9996e24bc43bfc0.png"
-                  alt="phone"
-                />
+              <div class="img-container blur-container">
+                <img src="./assets/1.jpg" alt="" />
+                <img src="./assets/1.jpg" alt="" />
               </div>
               <span class="category-name"> Phones </span>
             </a>
           </li>
           <li class="category-container__item">
             <a class="category-container__item-link" href="#">
-              <div class="img-container">
-                <img
-                  src="http://assets.stickpng.com/images/588a6be8d06f6719692a2d2b.png"
-                  alt="headphone"
-                />
+              <div class="img-container blur-container">
+                <img src="./assets/2.jpg" alt="" />
+                <img src="./assets/2.jpg" alt="" />
               </div>
               <span class="category-name"> Headphones </span>
             </a>
           </li>
           <li class="category-container__item">
             <a class="category-container__item-link" href="#">
-              <div class="img-container">
-                <img
-                  src="https://assets.stickpng.com/images/580b57fbd9996e24bc43bfc0.png"
-                  alt="phone"
-                />
+              <div class="img-container blur-container">
+                <img src="./assets/3.jpg" alt="" />
+                <img src="./assets/3.jpg" alt="" />
               </div>
               <span class="category-name"> Phones </span>
             </a>
           </li>
           <li class="category-container__item">
             <a class="category-container__item-link" href="#">
-              <div class="img-container">
-                <img
-                  src="http://assets.stickpng.com/images/588a6be8d06f6719692a2d2b.png"
-                  alt="headphone"
-                />
+              <div class="img-container blur-container">
+                <img src="./assets/4.jpg" alt="" />
+                <img src="./assets/4.jpg" alt="" />
               </div>
               <span class="category-name"> Headphones </span>
             </a>
           </li>
           <li class="category-container__item">
             <a class="category-container__item-link" href="#">
-              <div class="img-container">
-                <img
-                  src="https://assets.stickpng.com/images/580b57fbd9996e24bc43bfc0.png"
-                  alt="phone"
-                />
+              <div class="img-container blur-container">
+                <img src="./assets/5.jpg" alt="" />
+                <img src="./assets/5.jpg" alt="" />
               </div>
               <span class="category-name"> Phones </span>
             </a>
           </li>
           <li class="category-container__item">
             <a class="category-container__item-link" href="#">
-              <div class="img-container">
-                <img
-                  src="http://assets.stickpng.com/images/588a6be8d06f6719692a2d2b.png"
-                  alt="headphone"
-                />
+              <div class="img-container blur-container">
+                <img src="./assets/1.jpg" alt="" />
+                <img src="./assets/1.jpg" alt="" />
               </div>
               <span class="category-name"> Headphones </span>
             </a>
@@ -94,12 +84,13 @@
     <div class="slider-wrapper">
       <div class="mobile-counter">
         <span class="currentSlideNum">1</span>
-        <span>/</span>
+        <span aria-hidden="true">/</span>
         <span class="totalSlideNum">2</span>
       </div>
-      <!-- center -->
+      <!-- slides container -->
       <div class="slider-container">
-        <div class="slide-content">
+        <!-- content -->
+        <div class="slide-content" aria-selected="true">
           <!-- body -->
           <div class="slider-body">
             <div class="body-info">
@@ -147,7 +138,6 @@
           </div>
         </div>
         <!-- for trying purpose -->
-
         <div class="slide-content slider-demo-purpose2">
           <!-- body -->
           <div class="slider-body">
@@ -172,35 +162,35 @@
       <!-- mini slider -->
       <div class="mini-slider-wrapper">
         <ul class="mini-list-container">
-          <li class="mini-list-item active">
+          <li class="mini-list-item active" aria-selected="true">
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               />
             </a>
           </li>
-          <li class="mini-list-item">
+          <li class="mini-list-item" aria-selected="false">
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               />
             </a>
           </li>
-          <li class="mini-list-item">
+          <li class="mini-list-item" aria-selected="false">
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               />
             </a>
           </li>
-          <li class="mini-list-item">
+          <li class="mini-list-item" aria-selected="false">
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               />
             </a>
           </li>
-          <li class="mini-list-item">
+          <li class="mini-list-item" aria-selected="false">
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
@@ -216,7 +206,7 @@
       <ul class="bottom-nav__items">
         <li class="bottom-nav__item">
           <a href="#" class="bottom-nav__link">
-            <span class="bottom-nav__icon"
+            <span class="bottom-nav__icon" aria-hidden="true"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -241,7 +231,7 @@
         </li>
         <li class="bottom-nav__item">
           <a href="#" class="bottom-nav__link">
-            <span class="bottom-nav__icon"
+            <span class="bottom-nav__icon" aria-hidden="true"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -266,7 +256,7 @@
         </li>
         <li class="bottom-nav__item">
           <a href="#" class="bottom-nav__link">
-            <span class="bottom-nav__icon"
+            <span class="bottom-nav__icon" aria-hidden="true"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -291,7 +281,7 @@
         </li>
         <li class="bottom-nav__item">
           <a href="#" class="bottom-nav__link">
-            <span class="bottom-nav__icon"
+            <span class="bottom-nav__icon" aria-hidden="true"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -316,7 +306,7 @@
         </li>
         <li class="bottom-nav__item">
           <a href="#" class="bottom-nav__link">
-            <span class="bottom-nav__icon"
+            <span class="bottom-nav__icon" aria-hidden="true"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -342,6 +332,6 @@
       </ul>
     </nav>
     <!-- Bottom Nav End -->
-    <script src="/slider.js"></script>
+    <script src="/mobile-slider.js"></script>
   </body>
 </html>
