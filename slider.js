@@ -126,33 +126,31 @@ function setSliderPosition() {
 }
 //#endregion
 //#region desktop slider
-function addActiveClass(element) {
-  element.classList.add("active");
-  element.setAttribute("aria-selected", true);
+function toggleElement(elementRemoved, elementAdded) {
+  elementRemoved.classList.remove("active");
+  elementRemoved.setAttribute("aria-selected", false);
+  elementAdded.classList.add("active");
+  elementAdded.setAttribute("aria-selected", true);
 }
-function removeActiveClass(element) {
-  element.classList.remove("active");
-  element.setAttribute("aria-selected", false);
-}
-// initial values
-let activeItem = slides[0];
-let miniActive = miniListItems[0];
-
-miniListItems.forEach(function (item) {
-  item.addEventListener("click", function (e) {
-    const itemId = e.currentTarget.dataset.id;
-    const selectedItem = document.getElementById(itemId);
-    const isActive = selectedItem.classList.contains("active");
-    if (isActive) {
-      return;
-    } else if (!isActive) {
-      removeActiveClass(miniActive);
-      addActiveClass(item);
-      removeActiveClass(activeItem);
-      addActiveClass(selectedItem);
-      activeItem = selectedItem;
-      miniActive = item;
-    }
+if (miniListItems.length > 0) {
+  // initial values
+  let miniActive = miniListItems[0];
+  let activeItem = slides[0];
+  miniListItems.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      const itemId = e.currentTarget.dataset.id;
+      const selectedItem = document.getElementById(itemId);
+      const isActive = selectedItem.classList.contains("active");
+      if (isActive) {
+        return;
+      } else if (!isActive) {
+        toggleElement(miniActive, item);
+        toggleElement(activeItem, selectedItem);
+        activeItem = selectedItem;
+        miniActive = item;
+      }
+    });
   });
-});
+}
+
 //#endregion
