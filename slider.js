@@ -1,15 +1,17 @@
-const slider = document.querySelector(".slider-container");
+const slider = document.querySelector("#slider-container");
 const slides = Array.from(document.querySelectorAll(".slide-content"));
 // slide counter elements
 const currentSlideNum = document.querySelector(".currentSlideNum");
 const totalSlideNum = document.querySelector(".totalSlideNum");
-
+// minilist
+const miniListItems = Array.from(document.querySelectorAll(".mini-list-item"));
 // gap and calculating
 let sliderWidth = slider.getBoundingClientRect().width;
 const slideItem = document.querySelector(".slide-content");
 let slideWidth = slideItem.getBoundingClientRect().width;
 parentChildGap = sliderWidth - slideWidth;
 
+//#region mobile slider
 // matchmedia
 const mediaQueryXs = window.matchMedia("(max-width:35.9375em)");
 function isMobile() {
@@ -122,3 +124,35 @@ function resetSliderPosition() {
 function setSliderPosition() {
   slider.style.transform = `translateX(${currentTranslate}px)`;
 }
+//#endregion
+//#region desktop slider
+function addActiveClass(element) {
+  element.classList.add("active");
+  element.setAttribute("aria-selected", true);
+}
+function removeActiveClass(element) {
+  element.classList.remove("active");
+  element.setAttribute("aria-selected", false);
+}
+// initial values
+let activeItem = slides[0];
+let miniActive = miniListItems[0];
+
+miniListItems.forEach(function (item) {
+  item.addEventListener("click", function (e) {
+    const itemId = e.currentTarget.dataset.id;
+    const selectedItem = document.getElementById(itemId);
+    const isActive = selectedItem.classList.contains("active");
+    if (isActive) {
+      return;
+    } else if (!isActive) {
+      removeActiveClass(miniActive);
+      addActiveClass(item);
+      removeActiveClass(activeItem);
+      addActiveClass(selectedItem);
+      activeItem = selectedItem;
+      miniActive = item;
+    }
+  });
+});
+//#endregion

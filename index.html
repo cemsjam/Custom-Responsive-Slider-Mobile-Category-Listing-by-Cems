@@ -20,7 +20,7 @@
     <div class="category-wrapper">
       <div class="category-container">
         <ul class="category-container__items">
-          <!-- REMINDER add transparent imgs here if want to be used first style -->
+          <!-- REMINDER add transparent imgs here if want to be used first style & uncomment related elements from scss file-->
           <!-- REMINDER add 2 imgs into img-container and add class blur-container for second style -->
           <li class="category-container__item">
             <a class="category-container__item-link" href="#">
@@ -82,15 +82,15 @@
     <!-- category-listing-end -->
     <!-- slider-wrapper -->
     <div class="slider-wrapper">
-      <div class="mobile-counter">
-        <span class="currentSlideNum">1</span>
+      <div class="mobile-counter" role="status">
+        <span class="currentSlideNum" aria-label="Currrent slide count">1</span>
         <span aria-hidden="true">/</span>
-        <span class="totalSlideNum">2</span>
+        <span class="totalSlideNum" aria-label="Total slide count"></span>
       </div>
       <!-- slides container -->
-      <div class="slider-container">
+      <div class="slider-container" role="slider" id="slider-container">
         <!-- content -->
-        <div class="slide-content" aria-selected="true">
+        <div class="slide-content active" id="content1" aria-selected="true">
           <!-- body -->
           <div class="slider-body">
             <div class="body-info">
@@ -102,19 +102,17 @@
           <!-- img side -->
           <div class="slider-main-img">
             <a class="main-img-link" href="#">
-              <div class="slide-item-container" id="slide-container">
-                <div class="slide-item">
-                  <img
-                    src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                    alt=""
-                  />
-                </div>
-              </div>
+              <figure class="slide-item" id="slide-container">
+                <img
+                  src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                  alt=""
+                />
+              </figure>
             </a>
           </div>
         </div>
         <!-- for trying purpose -->
-        <div class="slide-content slider-demo-purpose2">
+        <div class="slide-content" id="content2" aria-selected="false">
           <!-- body -->
           <div class="slider-body">
             <div class="body-info">
@@ -126,19 +124,17 @@
           <!-- img side -->
           <div class="slider-main-img">
             <a class="main-img-link" href="#">
-              <div class="slide-item-container" id="slide-container">
-                <div class="slide-item">
-                  <img
-                    src="https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt=""
-                  />
-                </div>
-              </div>
+              <figure class="slide-item" id="slide-container">
+                <img
+                  src="https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt=""
+                />
+              </figure>
             </a>
           </div>
         </div>
         <!-- for trying purpose -->
-        <div class="slide-content slider-demo-purpose2">
+        <div class="slide-content" id="content3" aria-selected="false">
           <!-- body -->
           <div class="slider-body">
             <div class="body-info">
@@ -150,47 +146,113 @@
           <!-- img side -->
           <div class="slider-main-img">
             <a class="main-img-link" href="#">
-              <div class="slide-item-container" id="slide-container">
-                <div class="slide-item">
-                  <img src="https://source.unsplash.com/random" alt="" />
-                </div>
-              </div>
+              <figure class="slide-item" id="slide-container">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </figure>
+            </a>
+          </div>
+        </div>
+        <!-- for trying purpose -->
+        <div class="slide-content" id="content4" aria-selected="false">
+          <!-- body -->
+          <div class="slider-body">
+            <div class="body-info">
+              <p class="slider-subheading">Some type of subheading</p>
+              <h2 class="slider-heading">Some type of eyecatching heading</h2>
+            </div>
+            <button class="btn slider-btn">Click Me</button>
+          </div>
+          <!-- img side -->
+          <div class="slider-main-img">
+            <a class="main-img-link" href="#">
+              <figure class="slide-item" id="slide-container">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </figure>
+            </a>
+          </div>
+        </div>
+        <!-- for trying purpose -->
+        <div class="slide-content" id="content5" aria-selected="false">
+          <!-- body -->
+          <div class="slider-body">
+            <div class="body-info">
+              <p class="slider-subheading">Some type of subheading</p>
+              <h2 class="slider-heading">Some type of eyecatching heading</h2>
+            </div>
+            <button class="btn slider-btn">Click Me</button>
+          </div>
+          <!-- img side -->
+          <div class="slider-main-img">
+            <a class="main-img-link" href="#">
+              <figure class="slide-item" id="slide-container">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </figure>
             </a>
           </div>
         </div>
       </div>
       <!-- mini slider -->
       <div class="mini-slider-wrapper">
-        <ul class="mini-list-container">
-          <li class="mini-list-item active" aria-selected="true">
+        <ul
+          class="mini-list-container"
+          aria-controls="slider-container"
+          role="listbox"
+          aria-roledescription="mini pictured list of slides"
+        >
+          <li
+            class="mini-list-item active"
+            aria-labelledby="content1"
+            aria-selected="true"
+            data-id="content1"
+          >
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               />
             </a>
           </li>
-          <li class="mini-list-item" aria-selected="false">
+          <li
+            class="mini-list-item"
+            aria-labelledby="content2"
+            aria-selected="false"
+            data-id="content2"
+          >
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               />
             </a>
           </li>
-          <li class="mini-list-item" aria-selected="false">
+          <li
+            class="mini-list-item"
+            aria-selected="false"
+            aria-labelledby="content3"
+            data-id="content3"
+          >
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               />
             </a>
           </li>
-          <li class="mini-list-item" aria-selected="false">
+          <li
+            class="mini-list-item"
+            aria-selected="false "
+            aria-labelledby="content4"
+            data-id="content4"
+          >
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               />
             </a>
           </li>
-          <li class="mini-list-item" aria-selected="false">
+          <li
+            class="mini-list-item"
+            aria-selected="false"
+            aria-labelledby="content5"
+            data-id="content5"
+          >
             <a class="mini-list-link" href="#">
               <img
                 src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
@@ -332,6 +394,6 @@
       </ul>
     </nav>
     <!-- Bottom Nav End -->
-    <script src="/mobile-slider.js"></script>
+    <script src="/slider.js"></script>
   </body>
 </html>

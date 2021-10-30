@@ -8,10 +8,7 @@
 html {
   scroll-behavior: smooth;
 }
-img {
-  max-width: 100%;
-  display: block;
-}
+
 body {
   line-height: 1.5;
   font-size: 1rem;
@@ -25,19 +22,33 @@ h5,
 h6 {
   line-height: 1.1;
 }
+img {
+  max-width: 100%;
+  display: block;
+}
+ol,
 ul {
   list-style: none;
 }
 a {
   text-decoration: none;
 }
+a,
+button,
+select,
+textarea {
+  font-family: inherit;
+}
+a:not(:disabled, .disabled),
+button:not(:disabled, .disabled) {
+  cursor: pointer;
+}
 .btn {
   background: none;
   border: none;
   user-select: none;
-  font-family: inherit;
   white-space: nowrap;
-  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .sr__only {
