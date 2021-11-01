@@ -154,3 +154,32 @@ if (miniListItems.length > 0) {
 }
 
 //#endregion
+//region category listing overflow drag scroll
+const categorySlider = document.querySelector(".category-container__items");
+let isDown = false,
+  startX,
+  scrollLeftPos;
+
+categorySlider.addEventListener("mousedown", (e) => {
+  isDown = true;
+  categorySlider.classList.add("active");
+  startX = e.pageX - categorySlider.offsetLeft;
+  scrollLeftPos = categorySlider.scrollLeft;
+});
+
+categorySlider.addEventListener("mouseleave", () => {
+  isDown = false;
+});
+
+categorySlider.addEventListener("mouseup", () => {
+  isDown = false;
+});
+
+categorySlider.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - categorySlider.offsetLeft;
+  const movedAmount = x - startX;
+  categorySlider.scrollLeft = scrollLeftPos - movedAmount;
+});
+//#endregion

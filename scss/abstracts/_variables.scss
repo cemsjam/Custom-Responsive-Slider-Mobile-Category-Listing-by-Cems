@@ -19,3 +19,8 @@ $bottom-nav-border: #e5e5e5;
 //z-index
 
 $counterZ: 100;
+
+// scrollbar
+
+$scrollThumbColor: hsl(0, 0%, 38%);
+$scrollThumbHover: lighten($scrollThumbColor, 15);
