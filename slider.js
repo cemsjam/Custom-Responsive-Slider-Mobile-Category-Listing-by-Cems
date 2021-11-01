@@ -154,32 +154,50 @@ if (miniListItems.length > 0) {
 }
 
 //#endregion
-//region category listing overflow drag scroll
+
+//#region category listing overflow drag scroll
 const categorySlider = document.querySelector(".category-container__items");
+const preventClick = (e) => {
+  e.preventDefault();
+  e.stopImmediatePropagation();
+};
 let isDown = false,
   startX,
   scrollLeftPos;
+let isDragged = false;
 
 categorySlider.addEventListener("mousedown", (e) => {
   isDown = true;
-  categorySlider.classList.add("active");
   startX = e.pageX - categorySlider.offsetLeft;
   scrollLeftPos = categorySlider.scrollLeft;
+  categorySlider.classList.add("dragging");
 });
 
 categorySlider.addEventListener("mouseleave", () => {
   isDown = false;
+  categorySlider.classList.remove("dragging");
 });
 
-categorySlider.addEventListener("mouseup", () => {
+categorySlider.addEventListener("mouseup", (e) => {
+  const links = document.querySelectorAll(".category-container__item-link");
+  links.forEach((link) => {
+    if (isDragged) {
+      link.addEventListener("click", preventClick);
+    } else {
+      link.removeEventListener("click", preventClick);
+    }
+  });
+  isDragged = false;
   isDown = false;
+  categorySlider.classList.remove("dragging");
 });
 
 categorySlider.addEventListener("mousemove", (e) => {
   if (!isDown) return;
+  isDragged = true;
   e.preventDefault();
-  const x = e.pageX - categorySlider.offsetLeft;
-  const movedAmount = x - startX;
-  categorySlider.scrollLeft = scrollLeftPos - movedAmount;
+  const draggedAmount = e.pageX - categorySlider.offsetLeft;
+  const movedBy = draggedAmount - startX;
+  categorySlider.scrollLeft = scrollLeftPos - movedBy;
 });
 //#endregion

@@ -486,10 +486,17 @@ button:not(:disabled, .disabled) {
   padding: 10px;
   overflow-x: auto;
   scrollbar-width: none;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 .category-container__items::-webkit-scrollbar {
   display: none;
+}
+
+.category-container .dragging {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 .category-container__item {
