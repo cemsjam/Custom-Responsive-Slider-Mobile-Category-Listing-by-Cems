@@ -97,9 +97,155 @@ button:not(:disabled, .disabled) {
   border: 0;
 }
 
+.main-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.6rem;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.main-header-logo {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+
+.main-header-search-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 1rem 0 1.55rem;
+}
+
+.main-header .search-box {
+  position: relative;
+}
+
+.main-header .search-box .search-bar {
+  width: 100%;
+  outline: none;
+  padding: 0.4rem 0.4rem 0.4rem 1.8rem;
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  color: #333333;
+  caret-color: gray;
+}
+
+.main-header .search-box .search-bar:hover {
+  border-color: #b3b3b3;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.main-header .search-box .search-bar:hover + .ph-text,
+.main-header .search-box .search-bar:hover + .ph-text + .ph-icon {
+  color: #b3b3b3;
+}
+
+.main-header .search-box .search-bar:not(:focus):not(:placeholder-shown) + .ph-text,
+.main-header .search-box .search-bar:not(:focus):not(:placeholder-shown) + .ph-text + .ph-icon {
+  opacity: 0;
+}
+
+.main-header .search-box .search-bar:focus {
+  border-color: #999999;
+  -webkit-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.1);
+}
+
+.main-header .search-box .search-bar:focus + .ph-text {
+  opacity: 0;
+}
+
+.main-header .search-box .search-bar:focus + .ph-text + .ph-icon {
+  opacity: 0;
+}
+
+.main-header .search-box .ph-text {
+  position: absolute;
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 1.8rem;
+  font-size: 0.75rem;
+  color: #bfbfbf;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-header .search-box .ph-icon {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0.7rem;
+  width: 0.75rem;
+  aspect-ratio: 1;
+  color: #bfbfbf;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-header-nav .hamburger-btn {
+  width: 2rem;
+  aspect-ratio: 1;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  color: #bfbfbf;
+}
+
+.main-header-nav .hamburger-btn:hover {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+}
+
+.main-header-nav .hamburger-btn svg {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  width: 80%;
+  height: 80%;
+}
+
 .slider-wrapper {
   overflow-x: hidden;
   position: relative;
+  display: none;
   /*  .blink {
     opacity: 1;
     visibility: visible;
@@ -473,6 +619,10 @@ button:not(:disabled, .disabled) {
   }
 }
  */
+.category-wrapper {
+  display: none;
+}
+
 @media (min-width: 36em) {
   .category-wrapper {
     display: none;
@@ -644,4 +794,19 @@ button:not(:disabled, .disabled) {
   font-size: 0.625rem;
   color: #7b7b7b;
 }
+
+/* @keyframes wave {
+  20% {
+    border-radius: 45% 55% 62% 38% / 53% 51% 49% 47%;
+  }
+  40% {
+    border-radius: 45% 55% 49% 51% / 36% 51% 49% 64%;
+  }
+  60% {
+    border-radius: 60% 40% 57% 43% / 47% 62% 38% 53%;
+  }
+  80% {
+    border-radius: 60% 40% 32% 68% / 38% 36% 64% 62;
+  }
+} ; */
 /*# sourceMappingURL=main.css.map */

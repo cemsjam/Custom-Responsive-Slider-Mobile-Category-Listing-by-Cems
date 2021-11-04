@@ -16,6 +16,127 @@
     <title>By Cems</title>
   </head>
   <body>
+    <!-- Header -->
+    <header class="main-header" role="banner">
+      <div class="main-header-logo">
+        <a href="#" class="logo-link">
+          <img src="./assets/logo2.svg" alt="" class="logo"
+        /></a>
+      </div>
+      <div class="main-header-search-container">
+        <div class="search-box">
+          <input
+            aria-label="search box"
+            spellcheck="false"
+            type="text"
+            autocomplete="off"
+            placeholder=" "
+            maxlength="30"
+            class="search-bar"
+          />
+          <span aria-hidden="true" class="ph-text"> Search </span>
+          <span aria-hidden="true" class="ph-icon">
+            <?xml version="1.0" encoding="iso-8859-1"?>
+            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+            <svg
+              fill="currentColor"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 52.966 52.966"
+              style="enable-background: new 0 0 52.966 52.966"
+              xml:space="preserve"
+            >
+              <path
+                d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21
+	c5.083,0,9.748-1.817,13.384-4.832l14.895,15.491c0.196,0.205,0.458,0.307,0.721,0.307c0.25,0,0.499-0.093,0.693-0.279
+	C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19
+	S32.459,40,21.983,40z"
+              />
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <nav class="main-header-nav" role="navigation">
+        <button
+          aria-expanded="false"
+          aria-label="Main Menu"
+          type="button"
+          class="btn hamburger-btn"
+        >
+          <svg
+            width="72px"
+            height="72px"
+            viewBox="0 0 72 72"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="color" />
+            <g id="hair" />
+            <g id="skin" />
+            <g id="skin-shadow" />
+            <g id="line">
+              <line
+                stroke="currentColor"
+                x1="16"
+                x2="56"
+                y1="26"
+                y2="26"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              />
+              <line
+                stroke="currentColor"
+                x1="16"
+                x2="56"
+                y1="36"
+                y2="36"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              />
+              <line
+                stroke="currentColor"
+                x1="16"
+                x2="56"
+                y1="46"
+                y2="46"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+        </button>
+      </nav>
+    </header>
     <!-- mobile-category-listing -->
     <div class="category-wrapper">
       <div class="category-container">
@@ -81,23 +202,31 @@
     </div>
     <!-- category-listing-end -->
     <!-- slider-wrapper -->
-    <div class="slider-wrapper">
+    <div class="slider-wrapper" aria-label="slider Container">
       <div class="mobile-counter" role="status">
-        <span class="currentSlideNum" aria-label="Currrent slide count">1</span>
+        <span class="currentSlideNum" aria-label="Currrent slide count: 1"
+          >1</span
+        >
         <span aria-hidden="true">/</span>
-        <span class="totalSlideNum" aria-label="Total slide count"></span>
+        <span class="totalSlideNum" aria-label="Total slide count: 5"></span>
       </div>
       <!-- slides container -->
-      <div class="slider-container" role="slider" id="slider-container">
+      <div class="slider-container" id="slider-container">
         <!-- content -->
-        <div class="slide-content active" id="content1" aria-selected="true">
+        <div class="slide-content active" role="tabpanel" id="content1">
           <!-- body -->
-          <div class="slider-body">
-            <div class="body-info">
+          <div class="slider-body" aria-label="slide Item Info">
+            <header class="body-info">
               <p class="slider-subheading">Some type of subheading</p>
-              <h2 class="slider-heading">Some type of eyecatching heading</h2>
-            </div>
-            <button class="btn slider-btn">Click Me</button>
+              <h2 class="slider-heading" id="imgAlt">Product Info</h2>
+            </header>
+            <button
+              type="button"
+              aria-label="More Details"
+              class="btn slider-btn"
+            >
+              Click Me
+            </button>
           </div>
           <!-- img side -->
           <div class="slider-main-img">
@@ -105,19 +234,21 @@
               <figure class="slide-item">
                 <img
                   src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                  alt=""
+                  aria-labelledby="imgAlt"
                 />
               </figure>
             </a>
           </div>
         </div>
         <!-- for trying purpose -->
-        <div class="slide-content" id="content2" aria-selected="false">
+        <div class="slide-content" id="content2" role="tabpanel">
           <!-- body -->
           <div class="slider-body">
             <div class="body-info">
               <p class="slider-subheading">Some type of subheading</p>
-              <h2 class="slider-heading">Some type of eyecatching heading</h2>
+              <h2 class="slider-heading" id="imgAlt">
+                Some type of eyecatching heading
+              </h2>
             </div>
             <button class="btn slider-btn">Click Me</button>
           </div>
@@ -127,65 +258,98 @@
               <figure class="slide-item">
                 <img
                   src="https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  alt=""
+                  aria-labelledby="imgAlt"
                 />
               </figure>
             </a>
           </div>
         </div>
         <!-- for trying purpose -->
-        <div class="slide-content" id="content3" aria-selected="false">
+        <div class="slide-content" id="content3" role="tabpanel">
           <!-- body -->
           <div class="slider-body">
             <div class="body-info">
               <p class="slider-subheading">Some type of subheading</p>
-              <h2 class="slider-heading">Some type of eyecatching heading</h2>
+              <h2 class="slider-heading" id="imgAlt">
+                Some type of eyecatching heading
+              </h2>
             </div>
-            <button class="btn slider-btn">Click Me</button>
+            <button
+              type="button"
+              aria-label="More Details"
+              class="btn slider-btn"
+            >
+              Click Me
+            </button>
           </div>
           <!-- img side -->
           <div class="slider-main-img">
             <a class="main-img-link" href="#">
               <figure class="slide-item">
-                <img src="https://source.unsplash.com/random" alt="" />
+                <img
+                  src="https://source.unsplash.com/random"
+                  aria-labelledby="imgAlt"
+                />
               </figure>
             </a>
           </div>
         </div>
         <!-- for trying purpose -->
-        <div class="slide-content" id="content4" aria-selected="false">
+        <div class="slide-content" id="content4" role="tabpanel">
           <!-- body -->
-          <div class="slider-body">
+          <div class="slider-body" aria-label="slide Item Info">
             <div class="body-info">
               <p class="slider-subheading">Some type of subheading</p>
-              <h2 class="slider-heading">Some type of eyecatching heading</h2>
+              <h2 class="slider-heading" id="imgAlt">
+                Some type of eyecatching heading
+              </h2>
             </div>
-            <button class="btn slider-btn">Click Me</button>
+            <button
+              type="button"
+              aria-label="More Details"
+              class="btn slider-btn"
+            >
+              Click Me
+            </button>
           </div>
           <!-- img side -->
           <div class="slider-main-img">
-            <a class="main-img-link" href="#">
+            <a class="main-img-link" href="#" aria-label="active slide image">
               <figure class="slide-item">
-                <img src="https://source.unsplash.com/random" alt="" />
+                <img
+                  src="https://source.unsplash.com/random"
+                  aria-labelledby="imgAlt"
+                />
               </figure>
             </a>
           </div>
         </div>
         <!-- for trying purpose -->
-        <div class="slide-content" id="content5" aria-selected="false">
+        <div class="slide-content" id="content5" role="tabpanel">
           <!-- body -->
-          <div class="slider-body">
+          <div class="slider-body" aria-label="slide Item Info">
             <div class="body-info">
               <p class="slider-subheading">Some type of subheading</p>
-              <h2 class="slider-heading">Some type of eyecatching heading</h2>
+              <h2 class="slider-heading" id="imgAlt">
+                Some type of eyecatching heading
+              </h2>
             </div>
-            <button class="btn slider-btn">Click Me</button>
+            <button
+              type="button"
+              aria-label="More Details"
+              class="btn slider-btn"
+            >
+              Click Me
+            </button>
           </div>
           <!-- img side -->
           <div class="slider-main-img">
             <a class="main-img-link" href="#">
               <figure class="slide-item">
-                <img src="https://source.unsplash.com/random" alt="" />
+                <img
+                  src="https://source.unsplash.com/random"
+                  aria-labelledby="imgAlt"
+                />
               </figure>
             </a>
           </div>
@@ -196,14 +360,13 @@
         <ul
           class="mini-list-container"
           aria-controls="slider-container"
-          role="listbox"
-          aria-roledescription="mini pictured list of slides"
+          role="tablist"
         >
           <li
             class="mini-list-item active"
-            aria-labelledby="content1"
             aria-selected="true"
             data-id="content1"
+            role="tab"
           >
             <a class="mini-list-link" href="#">
               <img
@@ -213,7 +376,7 @@
           </li>
           <li
             class="mini-list-item"
-            aria-labelledby="content2"
+            role="tab"
             aria-selected="false"
             data-id="content2"
           >
@@ -226,8 +389,8 @@
           <li
             class="mini-list-item"
             aria-selected="false"
-            aria-labelledby="content3"
             data-id="content3"
+            role="tab"
           >
             <a class="mini-list-link" href="#">
               <img
@@ -237,8 +400,8 @@
           </li>
           <li
             class="mini-list-item"
-            aria-selected="false "
-            aria-labelledby="content4"
+            aria-selected="false"
+            role="tab"
             data-id="content4"
           >
             <a class="mini-list-link" href="#">
@@ -250,7 +413,7 @@
           <li
             class="mini-list-item"
             aria-selected="false"
-            aria-labelledby="content5"
+            role="tab"
             data-id="content5"
           >
             <a class="mini-list-link" href="#">
@@ -393,6 +556,7 @@
         </li>
       </ul>
     </nav>
+
     <!-- Bottom Nav End -->
     <script src="/slider.js"></script>
   </body>

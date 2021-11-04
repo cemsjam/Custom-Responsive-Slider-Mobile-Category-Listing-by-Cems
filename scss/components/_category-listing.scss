@@ -2,6 +2,7 @@
   @include breakpoint-up(sm) {
     display: none;
   }
+  display: none; //
 }
 .category-container {
   &__items {

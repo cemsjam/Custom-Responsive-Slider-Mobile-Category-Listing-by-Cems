@@ -1,0 +1,100 @@
+.main-header {
+  $logoSize: 2rem;
+  $transition: all 200ms;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.6rem;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  &-logo {
+    width: $logoSize;
+    aspect-ratio: 1;
+  }
+  &-search-container {
+    flex: 1;
+    margin: 0 1rem 0 1.55rem;
+  }
+  .search-box {
+    position: relative;
+    $pl: 1.8rem;
+    .search-bar {
+      width: 100%;
+      outline: none;
+      padding: 0.4rem 0.4rem 0.4rem $pl;
+      border: 1px solid $white-750;
+      border-radius: 4px;
+      transition: $transition ease-in;
+      color: $white-200;
+      caret-color: $white-500;
+      &:hover {
+        border-color: $white-700;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1%);
+      }
+      &:hover + .ph-text,
+      &:hover + .ph-text + .ph-icon {
+        color: $white-700;
+      }
+      &:not(:focus):not(:placeholder-shown) + .ph-text,
+      &:not(:focus):not(:placeholder-shown) + .ph-text + .ph-icon {
+        opacity: 0;
+      }
+
+      &:focus {
+        border-color: $white-600;
+        box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.1%);
+      }
+      &:focus + .ph-text {
+        opacity: 0;
+      }
+      &:focus + .ph-text + .ph-icon {
+        opacity: 0;
+      }
+    }
+    .ph-text {
+      position: absolute;
+      display: block;
+      top: 50%;
+      transform: translateY(-50%);
+      left: $pl;
+      font-size: 0.75rem;
+      color: $white-750;
+      transition: $transition ease-out;
+      user-select: none;
+    }
+    .ph-icon {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0.7rem;
+      width: 0.75rem;
+      aspect-ratio: 1;
+      color: $white-750;
+      transition: $transition ease-out;
+      user-select: none;
+    }
+  }
+  &-nav {
+    .hamburger-btn {
+      width: $logoSize;
+      aspect-ratio: 1;
+      transition: $transition ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      color: $white-750;
+      &:hover {
+        background-color: $white-950;
+        border-radius: 4px;
+      }
+      svg {
+        transition: $transition ease-in-out;
+        width: 80%;
+        height: 80%;
+      }
+    }
+  }
+}
